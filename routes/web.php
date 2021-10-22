@@ -23,12 +23,12 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/',[SiteController::class,'index']);
 Route::get('logout',[LoginController::class,'logout']);
+Route::resource('post', PostController::class);
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {
 Route::get('admin',[AdminController::class,'index'])->name('admin');
 Route::resource('category', CategoryController::class);
-Route::resource('post', PostController::class);
 
 
  

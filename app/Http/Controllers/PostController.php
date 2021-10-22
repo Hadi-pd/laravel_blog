@@ -40,7 +40,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('file');
+        $imageName = time().'-'.$file->getClientOriginalExtension();
+        $path = public_path('/image');
+        $file->move($path,$imageName);
+        $post = Post::create([
+            'name' => $request->name,
+            'cat_id' => $request->cat_id,
+            'price' => $request->price,
+            'desc' => $request->desc,
+            'file' => '/image/'.$imageName,
+        ]);
+        return redirect(url('/'));
     }
 
     /**

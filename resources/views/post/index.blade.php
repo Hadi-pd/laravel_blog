@@ -13,7 +13,7 @@
                             <p class="card-description">
                                 Input post information to form
                             </p>
-                            <form class="forms-sample" method="POST"
+                            <form class="forms-sample" method="POST" enctype="multipart/form-data"
                                 action="{{ $edit ? route('post.update', $post) : url('post') }}">
                                 @csrf
                                 @if ($edit)
@@ -26,7 +26,7 @@
                                         value="{{ $edit ? $post->name : '' }}" name="name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputName1">Name</label>
+                                    <label for="exampleInputName1">Price</label>
                                     <input type="text" class="form-control" id="exampleInputName1"
                                         value="{{ $edit ? $post->price : '' }}" name="price">
                                 </div>
