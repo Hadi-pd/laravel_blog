@@ -12,6 +12,7 @@ class Post extends Model
         'name',
         'cat_id',
         'price',
-        'desc'
+        'desc',
+        'file'
     ];
 }

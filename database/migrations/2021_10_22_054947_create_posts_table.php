@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->foreign('cat_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('desc')->nullable();
             $table->integer('price')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
