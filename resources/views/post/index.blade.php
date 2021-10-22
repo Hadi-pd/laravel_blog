@@ -31,6 +31,11 @@
                                         value="{{ $edit ? $post->price : '' }}" name="price">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputName1">Upload Image</label>
+                                    <input type="file" class="form-control" id="exampleInputName1"
+                                        value="{{ $edit ? $post->file : '' }}" name="file">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputCity1">Category</label>
                                     <select type="text" class="form-control" id="exampleInputCity1" name="cat_id">
                                         <option value="0">Main post</option>
